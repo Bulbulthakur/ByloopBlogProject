@@ -1,0 +1,159 @@
+REGISTER API
+METHOD : POST
+URL : http://localhost:5000/api/users/register
+DATA:
+{
+    "name":"admin",
+    "email":"admin@gmail.com",
+    "password":"12345"
+}
+
+RESPONCE :
+{
+    "status": true,
+    "user": {
+        "name": "admin",
+        "email": "admin@gmail.com",
+        "password": "$2a$10$RiQU3X5.b7G1akfyEUboCuSnx2BRVzVthMD/FOY1PMVS2spHIkcnG",
+        "_id": "66c09443804c0107d3738ff0",
+        "date": "2024-08-17T12:14:59.231Z",
+        "__v": 0
+    },
+    "message": "Register Succefully"
+}
+
+================================================================================
+LOGIN API 
+METHOD : POST
+URL : http://localhost:5000/api/users/login
+DATA :
+{
+     "email":"admin@gmail.com",
+    "password":"12345"
+}
+
+RESPONCE :
+{
+    "status": true,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YzA5NDQzODA0YzAxMDdkMzczOGZmMCIsImlhdCI6MTcyMzg5NjkzMiwiZXhwIjoxNzIzOTAwNTMyfQ.mE6QlImMqhOYFZe5T64NqhautbHn6KWUOdP0b4vXAhE",
+    "message": "Login Succefully",
+    "user": {
+        "name": "admin",
+        "email": "admin@gmail.com",
+        "id": "66c09443804c0107d3738ff0"
+    }
+}
+
+================================================================================
+SAVE post
+METHOD : POST
+URL : http://localhost:5000/api/posts/save
+AUTHONTICATION : BEARER TOKEN
+DATA : 
+{
+    "title":"100 Powerful Money Affirmations To Attract Wealth and Abundance",
+    "postImage":Image,
+    "content":"We’re going to keep it real, have some laughs, and actually dig into how you can change the way you think about money in a way that doesn’t involve chanting under the full moon (unless you’re into that—no judgment here).",
+}
+
+RESPONCE : 
+{
+    "status": true,
+    "Blog": {
+        "title": "100 Powerful Money Affirmations To Attract Wealth and Abundance",
+        "postImage": "1723898644900-WeiFShKZMOGqKjOa0hhEW7iiNnYEgsgK-Powerful-Money-Affirmations-To-Attract-Wealth-and-Abundance.webp",
+        "content": "We’re going to keep it real, have some laughs, and actually dig into how you can change the way you think about money in a way that doesn’t involve chanting under the full moon (unless you’re into that—no judgment here).",
+        "userId": "66c09443804c0107d3738ff0",
+        "_id": "66c09b14804c0107d3738ff5",
+        "date": "2024-08-17T12:44:04.907Z",
+        "__v": 0
+    },
+    "message": "Blog Add Successfully"
+}
+
+
+================================================================================
+Blog LIST
+METHOD : GET
+URL : http://localhost:5000/api/posts/
+AUTHONTICATION : BEARER TOKEN
+
+RESPONCE : 
+{
+    "status": true,
+    "BlogList": [
+        {
+            "_id": "66c09b14804c0107d3738ff5",
+            "title": "100 Powerful Money Affirmations To Attract Wealth and Abundance",
+            "postImage": "1723898644900-WeiFShKZMOGqKjOa0hhEW7iiNnYEgsgK-Powerful-Money-Affirmations-To-Attract-Wealth-and-Abundance.webp",
+            "content": "We’re going to keep it real, have some laughs, and actually dig into how you can change the way you think about money in a way that doesn’t involve chanting under the full moon (unless you’re into that—no judgment here).",
+            "userId": {
+                "_id": "66c09443804c0107d3738ff0",
+                "name": "admin"
+            },
+            "date": "2024-08-17T12:44:04.907Z",
+            "__v": 0
+        },
+        {
+            "_id": "66c09d4d804c0107d3739000",
+            "title": "7 Observations I made While At A retreat With Ultra-High Net Worth Entrepreneurs",
+            "postImage": "1723899213883-G6fcEQzUTSj60UO5JcDYUBLTA29kD4ar-6-Observations.png",
+            "content": "Immersing myself in the experience and energy of the group, I made some observations about these super-successful people.\n\nEvery business owner is feeling the pressure in the economy right now…I was surprised to hear how entrepreneurs at this level are handling it. Here’s what I observed.",
+            "userId": {
+                "_id": "66c09c8c804c0107d3738ffb",
+                "name": "tanu"
+            },
+            "date": "2024-08-17T12:53:33.884Z",
+            "__v": 0
+        },
+        {
+            "_id": "66c09f57804c0107d373901c",
+            "title": "Easy Buy Nothing Challenge Guide: Save Money and Improve Your Finances",
+            "postImage": "1723899735815-IcXnNdimtaUvXsafs4zO0XkdZoFWOoFW-Improve-Your-Finances.webp",
+            "content": "There are a lot of reasons to try a Buy Nothing Challenge. Perhaps the month before you spent a lot on presents, food or vacation.  Or maybe your budget is a little tighter than you want, and you need to save up some money for emergencies.",
+            "userId": {
+                "_id": "66c09e92804c0107d3739011",
+                "name": "Agrim"
+            },
+            "date": "2024-08-17T13:02:15.815Z",
+            "__v": 0
+        },
+    ]
+}================================================================================
+UPDATE Blog 
+METHOD : PUT
+URL : http://localhost:5000/api/posts/:id
+AUTHONTICATION : BEARER TOKEN
+DATA :
+{
+     "title": "Powerful Money Affirmations To Attract Wealth and Abundance",
+      "message": "By the time you’re done reading this article, you’re going to have a whole new way of thinking about money—one that actually works for you, not against you."
+}
+
+RESPONCE : 
+{
+    "status": true,
+    "blog": {
+        "_id": "66c09b14804c0107d3738ff5",
+        "title": "Powerful Money Affirmations To Attract Wealth and Abundance",
+        "postImage": "1723898644900-WeiFShKZMOGqKjOa0hhEW7iiNnYEgsgK-Powerful-Money-Affirmations-To-Attract-Wealth-and-Abundance.webp",
+        "content": "We’re going to keep it real, have some laughs, and actually dig into how you can change the way you think about money in a way that doesn’t involve chanting under the full moon (unless you’re into that—no judgment here).",
+        "userId": "66c09443804c0107d3738ff0",
+        "date": "2024-08-17T12:44:04.907Z",
+        "__v": 0
+    },
+    "message": "Blog Details Update Succefully"
+}
+
+
+================================================================================
+DELETE Blog 
+METHOD : DELETE
+URL : http://localhost:5000/api/posts/:id
+AUTHONTICATION : BEARER TOKEN
+
+RESPONCE : 
+{
+    "status": true,
+    "message": "Blog Details deleted Succefully"
+}
