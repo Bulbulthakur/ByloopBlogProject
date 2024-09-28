@@ -35,7 +35,7 @@ function Menu()
          <Link className="nav-link "  to="/UserHome">Home</Link> 
        </li>
        <li className="nav-item mx-3">
-         <Link className="nav-link text-nowrap"  to="/AddPost">Add Post</Link> 
+         <Link className="nav-link text-nowrap"  to="/AddPost">Add Blog</Link> 
        </li>
        <li className="nav-item mx-3">
          <Link className="nav-link text-nowrap"  to="/Profile">Profile</Link> 

@@ -2,12 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./component/Login";
 import Register from "./component/Register";
 import Menu from "./component/Menu";
-import Home from "./component/Home";
 import UserHome from "./component/UserHome";
 import Error from "./component/Error";
-import UserList from "./component/UserList";
-import ViewPost from "./component/ViewPost"
-import Message from "./component/Message"
 import AddPost from "./component/AddPost";
 import Profile from "./component/Profile";
 import UpdatePost from "./component/UpdatePost";
